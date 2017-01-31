@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="App">
+
+<head>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Cristo Renta</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="app/lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="app/css/style.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body ng-controller="MainCtrl">
+
+    <!-- Navigation -->
+    <div class="header">
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Cristo Renta</a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="" ng-click="ShowAeroportInfoM()">LLegada al Aeropuerto Marti</a>
+                        </li>
+                        <li>
+                            <a href="" ng-click="ShowPackageInfoM()">Información sobre Equipaje</a>
+                        </li>
+                        <li>
+                            <a href="">(+34) 607 51 3849</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container -->
+        </nav>
+    </div>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Portfolio Item Row -->
+        <div class="row">
+
+            <div class="col-md-8">
+                <img style="border-radius: 10px; max-height: 500px;" id="ImgPrst" class="img-responsive" src="app/img/rent0{{PaginationN - 1}}.jpg" alt="">                                      
+                <nav aria-label="Page navigation">
+                    <ul class="pagination">
+                        <li class="{{ (PaginationN == 1)? 'active' : '' }}"><a href="" ng-click="Pagination(1)">1</a></li>
+                        <li class="{{ (PaginationN == 2)? 'active' : '' }}"><a href="" ng-click="Pagination(2)">2</a></li>
+                        <li class="{{ (PaginationN == 3)? 'active' : '' }}"><a href="" ng-click="Pagination(3)">3</a></li>
+                        <li class="{{ (PaginationN == 4)? 'active' : '' }}"><a href="" ng-click="Pagination(4)">4</a></li>
+                        <li class="{{ (PaginationN == 5)? 'active' : '' }}"><a href="" ng-click="Pagination(5)">5</a></li>
+                        <li class="{{ (PaginationN == 6)? 'active' : '' }}"><a href="" ng-click="Pagination(6)">6</a></li>
+                        <li class="{{ (PaginationN == 7)? 'active' : '' }}"><a href="" ng-click="Pagination(7)">7</a></li>
+                        <li class="{{ (PaginationN == 8)? 'active' : '' }}"><a href="" ng-click="Pagination(8)">8</a></li>
+                        <li class="{{ (PaginationN == 9)? 'active' : '' }}"><a href="" ng-click="Pagination(9)">9</a></li>
+                        <li class="{{ (PaginationN == 10)? 'active' : '' }}"><a href="" ng-click="Pagination(10)">10</a></li>
+                        <li class="{{ (PaginationN == 11)? 'active' : '' }}"><a href="" ng-click="Pagination(11)">11</a></li>
+                        <li class="{{ (PaginationN == 12)? 'active' : '' }}"><a href="" ng-click="Pagination(12)">12</a></li>
+                        <li class="{{ (PaginationN == 13)? 'active' : '' }}"><a href="" ng-click="Pagination(13)">13</a></li>
+                    </ul>
+                </nav>        
+                <div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" ng-click="ShowAeroportInfo()" style="cursor: pointer">
+                            More Info
+                        </div>
+                        <div class="panel-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus
+                            . Mauris ultricies, justo eu convallis placerat, felis enim.
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="panel panel-primary">
+                        <div class="panel-heading" ng-click="ShowAeroportInfo()" style="cursor: pointer">
+                            TRAMITES A EFECTUAR A SU LLEGADA AL AEROPUERTO JOSE MARTI DE LA HABANA
+                        </div>
+                        <div class="panel-body" ng-show="aeroportShow">
+                            <p>
+                                Ya ha aterrizado felizmente el avion y ha aparcado. Bienvenido, esta usted en la Perla del Caribe,
+                                en la "mas bella tierra que ojos humanos hayan visto jamas", segun palabras de Cristobal Colon, 
+                                esta usted en Cuba. 
+                            </p>
+                            <p>
+                                Nos referiremos al aeropuerto "Jose Marti" de La Habana, por ser el de la entrada de la mayoria de turistas,
+                                y describiremos la terminal 3, la de entrada para casi todos los paises, excepto para los vuelos procedentes de 
+                                Estados Unidos que lo hacen por otra terminal.                                 
+                            </p>
+                            <p>
+                                Tambien hay vuelos internacionales que llegan al Aeropuerto de Varadero, al de Holguin y al de Santiago de Cuba.
+                            </p>
+                            <p>
+                                Ya esta usted en la terminal 3 del aeropuerto de La Habana "Jose Marti". Jose Martí es el padre de la Patria cubana
+                                y heroe de la independencia de Cuba. 
+                            </p>
+                            <p>
+                                Cuando el avion aparque, recoja sus cosas e inicie la salida. Cuando llegue al tunel que une el avion con la moderna terminal, lo primero que notará es 
+                                la calidez del aire tropical cubano.
+                            </p>
+                            <p>
+                                Ha de recorrer en grupo con los otros pasajeros un camino por el lateral del salon de "salidas" y bajar unas escaleras hasta una gran sala donde estan las 
+                                ventanillas de los oficiales de inmigracion. 
+                            </p>
+                            <p>
+                                La entrada al salon se hace por la izquierda, de forma que alli se agolpan los viajeros, usted puede ir hacia la derecha, donde habra ventanillas vacias y la 
+                                espera será menor. De todos modos el tramite es rapido y tienen preferencia las embarazadas y las familias que viajan con niños.
+                            </p>
+                            <p>
+                                Cuando le toque el turno, situese frente a la ventanilla del control de inmigracion, el o la oficial le pedira el 
+                                pasaporte (tiene que tener al mensos seis meses de validez), el boleto de vuelo (o billete electronico), y el visado
+                                (o tarjeta turistica).
+                            </p>
+                            <p>
+                                Seguro de asistencia medica
+                            </p>
+                            <p>
+                                Dele al oficial la direccion del apartamento o casa reservada cuando le pregunte.
+                            </p>
+                            <p>
+                                No es necesario ningun voucher ni ningun comprobante, pero debe llevar bien apuntada la direccion del apartamento o la casa reservada para que el oficial
+                                compruebe que el alojamiento es legal (todos los alojamientos de nuestra web son legales). Tanto las casas como los hoteles informaran
+                                a inmigracion de su llegada al hacerle el registro.
+                            </p>
+                            <p>
+                                El oficial de la ventanilla le dará la bienvenida con mucha correccion, le mirará detenidamente, le dira que se ponga de 
+                                perfil, que se quite las gafas y le hara una foto con una camara (como una web cam) que tiene delante. Detras tiene otras
+                                dos camaras. No se ponga nervioso, puede que le comente que en la foto del pasaporte tenia barba o el pelo mas corto 
+                                o largo. Es normal. Recuerde que esta en Cuba y no hay prisa.                                
+                            </p>
+                        </div>
+                    </div>
+                    <div class="panel panel-primary">
+                        <div class="panel-heading" ng-click="ShowPackageInfo()" style="cursor: pointer">
+                            VACACIONES EN CUBA - Que llevar en la maleta - Documentos necesarios
+                        </div>
+                        <div class="panel-body" ng-show="packageShow">
+                            <p>
+                                <b>PASAJE: </b> Ha de adquirir ida y vuelta, seguramente usted deseará quedarse, pero sin permiso de residencia, con visado o 
+                                tarjeta turística, usted solo puede estar en Cuba como turista un mes ampliable a dos o tres (según de que país usted sea). 
+                                Desde esta misma Web usted puede reservar vuelo, vea el apartado "Oferta de vuelos a Cuba"
+                            </p>
+                            <p>
+                                <b>VISADO: </b> Es el permiso de estancia que le concede Cuba.
+                            </p>
+                            <h4>SEGURO medico y VACUNAS:</h4>
+                            <p>
+                                <b>Vacunas: </b> Para ir a Cuba no es necesario vacunarse de nada. Aunque Cuba es un país tropical, es un país avanzado 
+                                en temas de salud, con miles de médicos muy afamados. Las enfermedades (como la malaria) típicas de otros países
+                                tropicales, incluso de su entorno, están desde hace muchos años desterradas de Cuba, que no obstante no descuida
+                                la vigilancia y somete a fumigación continua las áreas donde puede haber mosquitos transmisores.
+                            </p>
+                            <p>
+                                <b>Enfermedades gastrointestinales: </b> No obstante los turistas de algunos países no tienen anticuerpos para combatir 
+                                algunas enfermedades intestinales, por lo que se recomienda beber siempre agua embotellada o hervida.                                
+                            </p>
+                            <p>
+                                <b>Seguro medico: </b> La sanidad es gratuita para los cubanos, pero los turistas, cuando tienen una enfermedad grave, 
+                                son atendidos en clínicas internacionales, (por ejemplo la de Cira García en La Habana). Desde el 1º. de mayo de 2010 
+                                es obligatorio para entrar en Cuba poseer un seguro medico.
+                            </p>
+                            <h4>MALETA y EQUIPAJE DE MANO:</h4>
+                            <p>
+                                Las normas de seguridad al volar en un avión, prohíben llevar en el equipaje de mano objetos punzantes, tijeras, cortaúñas, cuchillas
+                                de afeitar, etc. Téngalo en cuenta a la hora de hacer el equipaje para todo eso meterlo en la maleta.
+                            </p>
+                            <p>
+                                Como a veces y lamentablemente se pierde o se retrasa la maleta, lleve en el equipaje de mano lo imprescindible para pasar los primeros días. 
+                                No obstante, en los supermercados y almacenes de La Habana usted encontrará todo lo que pueda necesitar.
+                            </p>
+                            <p>
+                                Usted puede llevar hasta 30 kg de peso a Cuba sin pagar aranceles
+                            </p>
+                            <p>
+                                <b>Ropa a llevar: </b>Cuba es un país tropical. Todo el año hace calor y todo el año puede usted bañarse. Excepcionalmente hay algunos días en invierno
+                                (alrededor de enero, pues es hemisferio norte), en que entra algún frente frio y la temperatura nocturna puede caer a 10 grados centígrados. 
+                                Si viaja en invierno, lleve una chaqueta. De calzado lo mejor son las sandalias.
+                            </p>
+                            <p>
+                                Recuerde que los eventos culturales son importantes en Cuba. Probablemente conozca a una chica o chico al que le guste el cine, el teatro, el ballet y para
+                                todos esos eventos los hombres necesitan ir con pantalón largo y camisa. Al cine no se permite a los hombres entrar en pantalón corto o camiseta 
+                                con los hombros descubiertos.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <h3>Descripción del alojamiento</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus
+                    . Mauris ultricies, justo eu convallis placerat, felis enim.</p>
+                <h3>Servicios incluidos</h3>
+                <ul>
+                    <li>Lorem Ipsum</li>
+                    <li>Dolor Sit Amet</li>
+                    <li>Consectetur</li>
+                    <li>Adipiscing Elit</li>
+                </ul>
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>
+                        <code>(+34) 607 51 3849</code>
+                    </p>
+                    <p>
+                        <code>havanahair@yahoo.es</code>
+                    </p>
+                    <p>Copyright &copy; CristoRenta 2017</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="app/lib/jquery/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="app/lib/bootstrap/js/bootstrap.js"></script>
+    
+    <!-- AngularJS -->
+    <script src="app/lib/angular/angular.js"></script>
+    <script src="app/lib/angular/angular-route.js"></script>
+    <script src="app/scritps/app.js"></script>
+    
+    <!-- Controllers -->
+    <script src="app/scritps/controllers/MainCtrl.js"></script>
+
+</body>
+
+</html>
